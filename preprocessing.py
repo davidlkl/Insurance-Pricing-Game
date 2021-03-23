@@ -40,6 +40,8 @@ def add_target_encoding(df_data, Y, min_sample_leaf=350, smoothing=0, noise_leve
     
     return df_data, target_encoder
 
+# Binning on continuous feature and ;
+# Grouping on categorical feature
 def create_groups(df_data):
     
     # Group driver 1 age
@@ -135,6 +137,7 @@ def create_groups(df_data):
     df_data['vh_type_pol_usage'] = df_data['vh_type'] + '_' + df_data['pol_usage_grp']
     return df_data
 
+# Imputation and Clipping
 def impute_and_clip(df_data):
     
     df_data['population'] = df_data['population'].clip(lower=10)
