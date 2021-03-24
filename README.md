@@ -1,8 +1,14 @@
-# Insurance-Pricing-Game
-1st place solution
+# Insurance-Pricing-Game - 1st place solution
 
-For feature engineering, please refer to preprocessing.py.
+## Folder structure:
+### Preprocessing.py
+Feature engineering
 
-For model training, please refer to training.py.
+### Training.py
+Model training
 
-The pricing strategy lies in the model.py.
+### Model.py
+- The script that is used to produce prediction inside the AICrowd environment
+- Pricing strategy is incorporated in the predict_premium function
+
+The final presentation is also uploaded to this repository.
