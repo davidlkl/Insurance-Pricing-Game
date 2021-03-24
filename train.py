@@ -328,7 +328,7 @@ for use_agg in [True]:
         
         glm_regressor.fit(X_train_cv, y_train_cv)
         lgbm_regressor.fit(X_train_tree_cv, y_train_cv, eval_set=[(X_test_tree_cv, y_test_cv)], early_stopping_rounds=30, verbose=False)
-        # df_regressor.fit(X_train_tree_cv, y_train_cv)
+        df_regressor.fit(X_train_tree_cv, y_train_cv)
         xgb_regressor.fit(X_train_tree_cv, y_train_cv,
                           eval_set=[(X_test_tree_cv, y_test_cv)],
                           eval_metric=['tweedie-nloglik@1.25'],
@@ -344,7 +344,7 @@ for use_agg in [True]:
         
         prediction_glm = glm_regressor.predict(X_test_cv)
         prediction_lgbm = lgbm_regressor.predict(X_test_tree_cv)
-        # prediction_df = df_regressor.predict(X_test_tree_cv)
+        prediction_df = df_regressor.predict(X_test_tree_cv)
         prediction_xgb = xgb_regressor.predict(X_test_tree_cv)
         prediction_ctb = ctb_regressor.predict(X_test_tree_cv)
         # prediction_ridge = ridge_regressor.predict(X_test_cv)
@@ -354,7 +354,7 @@ for use_agg in [True]:
         prediction_cv = np.hstack((
             prediction_glm.reshape(-1, 1),
             prediction_lgbm.reshape(-1, 1),
-            # prediction_df.reshape(-1, 1),
+            prediction_df.reshape(-1, 1),
             prediction_xgb.reshape(-1, 1),
             prediction_ctb.reshape(-1, 1),
             # prediction_ridge.reshape(-1, 1),
@@ -366,7 +366,7 @@ for use_agg in [True]:
         
         glm_td.append(mean_tweedie_deviance(y_test_cv, prediction_glm, power=1.5))
         lgbm_td.append(mean_tweedie_deviance(y_test_cv, prediction_lgbm, power=1.5))
-        # df_td.append(mean_tweedie_deviance(y_test_cv, prediction_df, power=1.5))
+        df_td.append(mean_tweedie_deviance(y_test_cv, prediction_df, power=1.5))
         xgb_td.append(mean_tweedie_deviance(y_test_cv, prediction_xgb, power=1.5))
         ctb_td.append(mean_tweedie_deviance(y_test_cv, prediction_ctb, power=1.5))
         # ridge_td.append(mean_tweedie_deviance(y_test_cv, prediction_ridge, power=1.5))
@@ -375,7 +375,7 @@ for use_agg in [True]:
         
         glm_gini.append(gini(y_test_cv, prediction_glm))
         lgbm_gini.append(gini(y_test_cv, prediction_lgbm))
-        # df_gini.append(gini(y_test_cv, prediction_df))
+        df_gini.append(gini(y_test_cv, prediction_df))
         xgb_gini.append(gini(y_test_cv, prediction_xgb))
         ctb_gini.append(gini(y_test_cv, prediction_ctb))
         # ridge_gini.append(gini(y_test_cv, prediction_ridge))
@@ -384,7 +384,7 @@ for use_agg in [True]:
         
         glm_rmse.append(rmse(prediction_glm, y_test_cv))
         lgbm_rmse.append(rmse(prediction_lgbm, y_test_cv))
-        # df_rmse.append(rmse(prediction_df, y_test_cv))
+        df_rmse.append(rmse(prediction_df, y_test_cv))
         xgb_rmse.append(rmse(prediction_xgb, y_test_cv))
         ctb_rmse.append(rmse(prediction_ctb, y_test_cv))
         # ridge_rmse.append(rmse(prediction_ridge, y_test_cv))
@@ -393,7 +393,7 @@ for use_agg in [True]:
         
         glm_cv_models.append(glm_regressor)
         lgbm_cv_models.append(lgbm_regressor)
-        # df_cv_models.append(df_regressor)
+        df_cv_models.append(df_regressor)
         xgb_cv_models.append(xgb_regressor)
         ctb_cv_models.append(ctb_regressor)
         # ridge_cv_models.append((ridge_regressor)
