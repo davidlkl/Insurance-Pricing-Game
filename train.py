@@ -83,7 +83,7 @@ input_dataset = 'training_imputed.csv'  # The default value.
 if len(sys.argv) >= 2:
 	input_dataset = sys.argv[1]
 
-for use_agg in [True]:
+for use_agg in [False, True]:
     df_data = pd.read_csv(input_dataset)
     
     # Calculate aggregated data
