@@ -12,9 +12,9 @@ Feature engineering
      a) Population density<br>
      b) Driver Gender combination<br>
      c) Vehicle feature interactions<br>
-       vh_value * vh_weight<br>
-       present_vh_value (exponential decay by vh_age)<br>
-       and more... <br>
+         vh_value * vh_weight<br>
+         present_vh_value (exponential decay by vh_age)<br>
+         and more... <br>
   3. Grouping<br>
      Grouped Med1 and Med2 together in policy type<br>
   4. Transformation<br>
@@ -31,8 +31,8 @@ A XGBoost and Logistic regression model to predict whether a claim would be >3k.
 
 Claim estimation model:<br>
 I stacked 7 base models using a Tweedie GLM as the meta-learner under 5 fold CV.<br>
-Base models:<br>
 
+Base models:<br>
 Tweedie GLM<br>
 Light GBM<br>
 DeepForest<br>
