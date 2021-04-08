@@ -1,4 +1,4 @@
-# Insurance-Pricing-Game - 1st place solution
+# AICrowd Insurance Pricing Game - 1st Place Solution
 
 https://www.aicrowd.com/challenges/insurance-pricing-game
 
