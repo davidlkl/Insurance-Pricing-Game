@@ -27,19 +27,19 @@ Feature engineering
 Model training
 
 Large Claim detection model:<br>
-  A XGBoost and Logistic regression model to predict whether a claim would be >3k.<br>
+- A XGBoost and Logistic regression model to predict whether a claim would be >3k.<br>
 
 Claim estimation model:<br>
-  I stacked 7 base models using a Tweedie GLM as the meta-learner under 5 fold CV.<br>
+- I stacked 7 base models using a Tweedie GLM as the meta-learner under 5 fold CV.<br>
 
 Base models:<br>
-  Tweedie GLM<br>
-  Light GBM<br>
-  DeepForest<br>
-  XGBoost<br>
-  CatBoost<br>
-  Neural Network with Tweedie deviance as loss function<br>
-  Neural network with log-normal distribution likelihood as loss function (learning the mu and sigma of the loss)<br>
+- Tweedie GLM<br>
+- Light GBM<br>
+- DeepForest<br>
+- XGBoost<br>
+- CatBoost<br>
+- Neural Network with Tweedie deviance as loss function<br>
+-- Neural network with log-normal distribution likelihood as loss function (learning the mu and sigma of the loss)<br>
 
 ### Model.py
 - The script that is used to produce prediction inside the AICrowd environment
