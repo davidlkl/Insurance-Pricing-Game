@@ -39,7 +39,7 @@ Base models:<br>
 - XGBoost<br>
 - CatBoost<br>
 - Neural Network with Tweedie deviance as loss function<br>
--- Neural network with log-normal distribution likelihood as loss function (learning the mu and sigma of the loss)<br>
+- Neural network with log-normal distribution likelihood as loss function (learning the mu and sigma of the loss)<br>
 
 ### Model.py
 - The script that is used to produce prediction inside the AICrowd environment
