@@ -24,15 +24,14 @@ Feature engineering
 
 
 ### Training.py
-Model training
 
-Large Claim detection model:<br>
+#### Large Claim detection model:<br>
 - A XGBoost and Logistic regression model to predict whether a claim would be >3k.<br>
 
-Claim estimation model:<br>
+#### Claim estimation model:<br>
 - I stacked 7 base models using a Tweedie GLM as the meta-learner under 5 fold CV.<br>
 
-Base models:<br>
+##### Base models:<br>
 - Tweedie GLM<br>
 - Light GBM<br>
 - DeepForest<br>
